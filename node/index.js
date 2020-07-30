@@ -16,7 +16,7 @@ const server = http.createServer((req, res)=>{
       fs.readFile('/api', (err, data) => {
          res.writeHead(200, {'Content-Type': 'text/html'});
          JSON.parse(data);
-         for (let i = 0, max = data.obj.num; i < max; i++) {
+         for (let i = 0, max = data.obj.length; i < max; i++) {
             if (i % data.obj.num[i] === 0) {
                resultText += String(data.obj.text) + ',&nbsp';
             } else {
